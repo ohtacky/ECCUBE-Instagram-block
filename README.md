@@ -4,7 +4,7 @@ ECCUBE3のブロックにInstagramの投稿画像を表示します。
 
 対応ver.3.0.4
 
-![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/1.png)
+![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/1.jpg)
 
 ### How to install
 
@@ -24,7 +24,7 @@ ECCUBE3管理画面<オーナーズストア<プラグイン<プラグイン一�
 
 プラグイン一覧の右端の「設定」ボタンをクリックします。
 
-![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/2.png)
+![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/2.jpg)
 
 
 設定画面が開くので、トークンとユーザーを入力します。
@@ -32,12 +32,12 @@ ECCUBE3管理画面<オーナーズストア<プラグイン<プラグイン一�
 トークンはInstagramのデベロッパー登録して取得したもの。
 ユーザーは投稿を表示させたいユーザーを入力してください。
 
-![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/3.png)
+![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/3.jpg)
 
 
 通常のブロックと同様に編集や差し込む位置の変更が出来ます。
 
-![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/4.png)
+![サンプル画像](https://github.com/ohtacky/ECCUBE-Instagram-block/raw/image/4.jpg)
 
 
 以上で12件のInstagramの投稿(新しい投稿から)が表示されます。
