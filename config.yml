@@ -1,0 +1,9 @@
+name: instagram連携
+code: InstagramApi
+version: 1.0.0
+service:
+    - InstagramApiServiceProvider
+orm.path:
+    - /Resource/doctrine
+migration.path:
+    - /migration

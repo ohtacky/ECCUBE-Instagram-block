@@ -1,0 +1,94 @@
+{#
+ This file is part of EC-CUBE
+
+ Copyright(c) 2000-2015 LOCKON CO.,LTD. All Rights Reserved.
+ http://www.lockon.co.jp/
+
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+#}
+
+<!--InstaAPI-->
+<!--エラーメッセージ 出力しない-->
+<!--{{ error }}-->
+
+{% block javascript %}
+<script>
+$(function(){
+    $('.instagram_visual').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 4,
+        responsive: [
+   {
+     breakpoint: 1024,
+     settings: {
+       dots: true,
+       arrows: false,
+       autoplay: true,
+       speed: 300,
+       slidesToShow: 3,
+     }
+   },
+   {
+     breakpoint: 600,
+     settings: {
+       dots: true,
+       arrows: false,
+       autoplay: true,
+       speed: 300,
+       slidesToShow: 2,
+     }
+   },
+   {
+     breakpoint: 480,
+     settings: {
+       dots: true,
+       arrows: false,
+       autoplay: true,
+       speed: 300,
+       slidesToShow: 1,
+     }
+   }
+  ]
+    });
+});
+</script>
+{% endblock %}
+
+{% block main %}
+  {% if datas %}
+  <div class="item_gallery">
+    <h4>Instagram gallery</h4>
+    <div class="row">
+       <div class="col-sm-12">
+            <div class="instagram_visual">
+              {% for data in datas  %}
+                <div class="item">
+                  <a href="{{ data['link'] }}" target="_blank" >
+                    <img src= "{{ data['images']['low_resolution']['url'] }}">
+
+                    <div style="margin:3px 3px 0 3px;">
+                      ♥ {{data['likes']['count']|number_format }} likes <br>
+                      comments {{data['comments']['count']|number_format }}<br>
+
+                      {% if data['caption'] %}
+                        {% if data['caption']['text']|length > 35 %}
+                          {{ data['caption']['text'][:35]~'...' }}
+                        {% else %}
+                          {{ data['caption']['text'] }}
+                        {% endif %}
+                      {% endif %}
+                    </div>
+
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+Plugin\InstagramApi\Entity\InstagramApi:
+    type: entity
+    table: plg_instagram_api
+    repositoryClass: Plugin\InstagramApi\Repository\InstagramApiRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: instagram_api_id
+            generator:
+                strategy: AUTO
+    fields:
+        api_token:
+            type: text
+            nullable: true
+        api_user:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }
