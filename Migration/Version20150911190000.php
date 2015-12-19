@@ -32,7 +32,7 @@ class Version20150911190000 extends AbstractMigration
     }
 
     public function postUp(Schema $schema)
-{
+    {
 
     $app = new \Eccube\Application();
     $app->boot();
@@ -41,20 +41,19 @@ class Version20150911190000 extends AbstractMigration
     $statement->execute();
     $blockId = $statement->fetchColumn();
 
-    $blockIdNumber = $blockId + 1;
-    $deviceTypeId = '10';
-    $blockName = 'Instagram';
-    $fileName = 'instagram_api';
-    $datetime = date('Y-m-d H:i:s');
-    $logicFlg = '1';
-    $deletableFlg = '1';
-    $insert = "INSERT INTO dtb_block(
-                        block_id, device_type_id, block_name, file_name, create_date, update_date, logic_flg, deletable_flg)
-                VALUES ('$blockIdNumber', '$deviceTypeId', '$blockName', '$fileName', '$datetime', '$datetime', '$logicFlg', '$deletableFlg'
-                        );";
-    $this->connection->executeUpdate($insert);
+    $this->connection->insert('dtb_block', array(
+      'block_id' => $blockId + 1,
+      'device_type_id' => '10',
+      'block_name' => 'Instagram',
+      'file_name' => 'instagram_api',
+      'create_date' => date('Y-m-d H:i:s'),
+      'update_date' => date('Y-m-d H:i:s'),
+      'logic_flg' => '1',
+      'deletable_flg' => '1'
+    ));
 
-}
+
+    }
 
 
     protected function createInstagramApiTable(Schema $schema)
